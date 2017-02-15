@@ -1,0 +1,53 @@
+.social-networks {
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+  }
+
+}
+.social-networks__item {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 35px;
+    fill: #00a4f9;
+  }
+
+}
+
+@media (min-width: $tablet-portrait) {
+
+  .social-networks {
+
+    span {
+      margin: 0 14px 0 0;
+    }
+
+  }
+  .social-networks__item {
+    width: 52px;
+    height: 52px;
+
+    svg {
+      width: 48px;
+    }
+
+  }
+
+}

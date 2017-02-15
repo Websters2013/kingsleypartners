@@ -1,0 +1,349 @@
+.areas {
+  position: relative;
+  padding-top: 170px;
+  padding-bottom: 79px;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url("../img/areas-bg.jpg");
+  color: #fff;
+  text-align: center;
+}
+.areas__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1907px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.areas__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+
+  &:before,
+  &:after {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    -webkit-transition: opacity 0.295s linear;
+    transition: opacity 0.295s linear;
+  }
+  &:before {
+    background: rgba(22, 25, 31, 0.6);
+  }
+  &:after {
+    z-index: 2;
+    background: -moz-linear-gradient(left,  rgba(24,28,37,1) 0%, rgba(67,84,117,0.01) 99%, rgba(67,84,117,0) 100%);
+    background: -webkit-linear-gradient(left,  rgba(24,28,37,1) 0%,rgba(67,84,117,0.01) 99%,rgba(67,84,117,0) 100%);
+    background: linear-gradient(to right,  rgba(24,28,37,1) 0%,rgba(67,84,117,0.01) 99%,rgba(67,84,117,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#181c25', endColorstr='#00435475',GradientType=1 );
+  }
+
+  &.visible {
+
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+
+  }
+
+  >div {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    -webkit-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+
+    &.visible {
+      opacity: 1;
+    }
+
+  }
+
+}
+.areas__text {
+  max-width: 970px;
+  margin: 0 auto 70px;
+  font-size: 20px;
+  line-height: 30px;
+}
+.areas__items {
+  text-align: left;
+
+  >div {
+
+    &:nth-child(2) {
+
+      .areas__title {
+
+        svg {
+          width: 33px;
+        }
+
+      }
+
+    }
+    &:nth-child(3) {
+
+      .areas__title {
+
+        svg {
+          width: 32px;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+.areas__item {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto 50px;
+  padding: 20px 20px 40px;
+  border: 2px solid transparent;
+  font-size: 16px;
+  line-height: 22px;
+  @include main-font1();
+  text-align: center;
+  -webkit-transition: border 0.3s ease;
+  transition: border 0.3s ease;
+  cursor: pointer;
+
+  &.opened {
+    border-color: #f7a400;
+
+    .areas__item-text {
+      //height: auto;
+    }
+    .areas__decor {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+  //&:after {
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
+  //  width: 100%;
+  //  height: 100%;
+  //  bo
+  //  content: '';
+  //}
+
+  p {
+    margin: 0 30px;
+  }
+
+}
+.areas__item-text {
+  overflow: hidden;
+  height: 0;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+}
+.areas__title {
+  position: relative;
+  margin: 0 0 20px;
+  font-size: 28px;
+  line-height: 34px;
+  @include main-font1();
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+
+  svg {
+    display: block;
+    margin: 0 auto 10px;
+    width: 27px;
+    fill: #f7a400;
+    -webkit-transition: fill 0.3s ease;
+    transition: fill 0.3s ease;
+  }
+
+}
+.areas__decor {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  background: #f7a400;
+  border-radius: 100%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #fff;
+
+    &:after {
+      border-top-color: #f7a400;
+      border-left-color: #f7a400;
+    }
+
+  }
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    -webkit-transform: translate(-50%,-50%) rotate(135deg);
+    transform: translate(-50%,-50%) rotate(135deg);
+    content: '';
+    -webkit-transition: border 0.3s ease;
+    transition: border 0.3s ease;
+  }
+
+}
+
+@media (min-width: $tablet-portrait) {
+
+  .areas__items {
+
+    >div {
+
+      &:nth-child(2) {
+
+        .areas__title {
+
+          svg {
+            height: 33px;
+            margin: 0 3px 0 0;
+          }
+
+        }
+
+      }
+      &:nth-child(3) {
+
+        .areas__title {
+
+          svg {
+            width: 33px;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  .areas__item {
+    padding: 50px 30px 70px;
+  }
+  .areas__title {
+    display: inline-block;
+    margin: 0 0 8px;
+
+    svg {
+      position: relative;
+      display: inline-block;
+      top: 3px;
+      left: auto;
+      height: 35px;
+      margin: 0 8px 0 0;
+    }
+
+  }
+
+}
+@media (min-width: $desktop) {
+
+  .areas {
+    padding-top: 220px;
+    padding-bottom: 99px;
+  }
+  .areas__text {
+    margin: 0 auto 39px;
+    font-size: 26px;
+    line-height: 40px;
+  }
+  .areas__items {
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(space-between);
+    height: 410px;
+
+    >div {
+      padding: 0 10px;
+      width: 33.333%;
+
+      &:nth-child(2) {
+
+        .areas__item {
+          border-radius: 0;
+        }
+
+      }
+      &:nth-child(3) {
+
+        .areas__item {
+          border-radius: 0 0 196px 0;
+        }
+
+      }
+
+    }
+
+  }
+  .areas__item {
+    margin: 0 auto 0;
+    border-radius: 0 0 0 196px;
+  }
+  .areas__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+}
+@media (min-width: $desktop-hd) {
+
+  .areas {
+    padding-top: 324px;
+    padding-bottom: 79px;
+  }
+  .areas__items {
+    height: 510px;
+  }
+  .areas__decor {
+    bottom: -62px;
+    width: 120px;
+    height: 120px;
+  }
+  .areas__item {
+    padding: 90px 70px;
+  }
+  .areas__title {
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+}

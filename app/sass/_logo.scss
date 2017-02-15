@@ -1,0 +1,33 @@
+.logo {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 170px;
+  height: 52px;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+
+  img,
+  svg {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+@media (min-width: $desktop)  {
+
+  .logo {
+    width: 240px;
+    height: 90px;
+  }
+
+}
+@media (min-width: $desktop-hd) {
+
+  .logo {
+    width: 359px;
+    height: 120px;
+  }
+
+}
