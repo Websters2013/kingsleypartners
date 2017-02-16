@@ -1,7 +1,7 @@
 .social-networks {
 
   span {
-    display: inline-block;
+    display: block;
     vertical-align: middle;
     margin: 0 10px 0 0;
   }
@@ -46,6 +46,18 @@
 
     svg {
       width: 48px;
+    }
+
+  }
+
+}
+@media (min-width: $desktop-hd) {
+
+  .social-networks {
+
+    span {
+      font-size: 26px;
+      display: inline-block;
     }
 
   }

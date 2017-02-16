@@ -39,7 +39,7 @@
 .site__footer {
   position: relative;
   width: 100%;
-  height: 150px;
+  height: 250px;
   background: #fff;
   font-size: 18px;
   line-height: 22px;
@@ -60,10 +60,11 @@
   width: 100%;
   padding: 20px 20px;
   margin: 0 auto;
-  height: 150px;
+  height: 250px;
 
   >div {
     width: 100%;
+    margin: 0 0 10px;
   }
 
 }
@@ -157,10 +158,10 @@
 @media (min-width: $desktop-hd) {
 
   .site__header {
-    height: 320px;
+    height: 240px;
   }
   .site__header-layout {
-    height: 320px;
+    height: 240px;
   }
   .site__footer-layout {
     padding: 2px 43px 0 64px;
@@ -177,6 +178,9 @@
 
     }
 
+  }
+  .site__footer-crafted {
+    right: 43px;
   }
 
 }

@@ -282,8 +282,8 @@
   }
   .areas__text {
     margin: 0 auto 39px;
-    font-size: 26px;
-    line-height: 40px;
+    //font-size: 26px;
+    //line-height: 40px;
   }
   .areas__items {
     @include flexbox();
@@ -319,31 +319,32 @@
     border-radius: 0 0 0 196px;
   }
   .areas__title {
-    font-size: 32px;
-    line-height: 40px;
+    //font-size: 32px;
+    //line-height: 40px;
   }
 
 }
 @media (min-width: $desktop-hd) {
 
   .areas {
-    padding-top: 324px;
-    padding-bottom: 79px;
+    //padding-top: 324px;
+    padding-top: 260px;
+    padding-bottom: 60px;
   }
   .areas__items {
-    height: 510px;
+    height: 410px;
   }
   .areas__decor {
-    bottom: -62px;
-    width: 120px;
-    height: 120px;
+    bottom: -45px;
+    width: 90px;
+    height: 90px;
   }
   .areas__item {
-    padding: 90px 70px;
+    //padding: 90px 70px;
   }
   .areas__title {
-    font-size: 36px;
-    line-height: 50px;
+    //font-size: 36px;
+    //line-height: 50px;
   }
 
 }

@@ -3,12 +3,6 @@ var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAni
 window.requestAnimationFrame = requestAnimationFrame;
 
 
-
-
-
-
-
-
 "use strict";
 ( function(){
 
@@ -33,15 +27,12 @@ window.requestAnimationFrame = requestAnimationFrame;
             _canAnimate = true,
             _canDraw = false,
             _percent = parseInt( _obj.data('percent') ),
-            _time = ( 130/_percent ) * 10,
             _value = parseInt( _obj.find('>span>span').text() ),
             _interval = setInterval( function() {} ),
-            _window = $(window);
-        var loader = document.querySelector('.improve__percent-indicator'),
-            start = null,
-            time = 5000,
-            max_value = 100
-            ;
+            _window = $(window),
+            _start = null,
+            _time = 5000,
+            max_value = 100;
 
 
         //private methods
@@ -72,56 +63,53 @@ window.requestAnimationFrame = requestAnimationFrame;
             },
             _animate = function () {
 
-                _interval = setInterval( function() {
+                if( _canAnimate ) {
+                    requestAnimationFrame(step);
+                }
 
-                    _draw();
-
-                }, _time );
 
             },
             step = function step(timestamp) {
                 var progress;
 
-                // Get the start time
-                if (start === null) {
-                    start = timestamp;
+                if ( _start === null ) {
+
+                    _start = timestamp;
+
                 }
+                progress = timestamp - _start;
 
-                // Calculate the progress
-                progress = timestamp - start;
+                if (progress < _time) {
 
-                // If not progressed
-                if (progress < time) {
+                    if ( Math.round((progress / _time * max_value).toPrecision(2)) <= _percent ) {
 
-                    if ( Math.round((progress / time * max_value).toPrecision(2)) <= _percent ) {
-
-                        loader.dataset.value = Math.round((progress / time * max_value).toPrecision(2));
-                        $(loader).find('>span>span').text( Math.round((progress / time * max_value).toPrecision(2)) );
-                        $(loader).css( {
-                            width: Math.round((progress / time * max_value).toPrecision(2)) + '%'
+                        _obj.find('>span>span').text( Math.round((progress / _time * max_value).toPrecision(2)) );
+                        _obj.css( {
+                            width: Math.round((progress / _time * max_value).toPrecision(2)) + '%'
                         } );
                         requestAnimationFrame(step);
 
                     } else {
 
-                        loader.dataset.value = _percent;
-                        $(loader).find('>span>span').text( _percent );
-                        $(loader).css( {
+                        _obj.find('>span>span').text( _percent );
+                        _obj.css( {
                             width: _percent + '%'
                         } );
+                        _canAnimate = false;
+                        _canDraw = false;
 
                     }
 
-
-                    // Finished
                 } else {
-                    loader.dataset.value = _percent;
-                    $(loader).find('>span>span').text( _percent );
-                    $(loader).css( {
+
+                    _obj.find('>span>span').text( _percent );
+                    _obj.css( {
                         width: _percent + '%'
                     } );
-                    start = null;
+                    _start = null;
                     requestAnimationFrame(step);
+                    _canAnimate = false;
+                    _canDraw = false;
                 }
             },
             _draw = function () {
@@ -133,6 +121,7 @@ window.requestAnimationFrame = requestAnimationFrame;
                         _value = _percent-1;
                         clearInterval( _interval );
                         _canAnimate = false;
+                        _canDraw = false;
 
                     } else {
 
@@ -154,11 +143,10 @@ window.requestAnimationFrame = requestAnimationFrame;
                     topInWindow = topPos - curScroll,
                     visiblePercent = 1-(topInWindow/windowH);
 
-                if( visiblePercent > .15 ){
+                if( visiblePercent > 0 ){
 
                     _canDraw = true;
-                    //_animate();
-                    requestAnimationFrame(step);
+                    _animate();
 
                 }
             },
