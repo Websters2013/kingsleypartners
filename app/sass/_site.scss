@@ -123,11 +123,12 @@
     //text-align: left;
   }
   .site__footer-layout {
-    //@include flex-direction(row);
+    @include flex-direction(row);
     //@include justify-content(space-between);
 
     >div {
-      //width: 50%;
+      width: auto;
+      padding: 0 20px;
 
       &:nth-child(2) {
         //text-align: right;

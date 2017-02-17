@@ -1,6 +1,8 @@
 .social-networks {
+  cursor: default;
 
   span {
+    @include main-font3();
     display: block;
     margin: 0 0 30px;
   }
