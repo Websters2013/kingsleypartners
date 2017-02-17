@@ -120,17 +120,17 @@
     height: 150px;
   }
   .site__footer {
-    text-align: left;
+    //text-align: left;
   }
   .site__footer-layout {
-    @include flex-direction(row);
-    @include justify-content(space-between);
+    //@include flex-direction(row);
+    //@include justify-content(space-between);
 
     >div {
-      width: 50%;
+      //width: 50%;
 
       &:nth-child(2) {
-        text-align: right;
+        //text-align: right;
       }
 
     }
