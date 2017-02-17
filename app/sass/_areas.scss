@@ -290,7 +290,7 @@
     @include flex-direction(row);
     @include align-items(center);
     @include justify-content(space-between);
-    height: 410px;
+    height: 310px;
 
     >div {
       padding: 0 10px;
@@ -328,11 +328,11 @@
 
   .areas {
     //padding-top: 324px;
-    padding-top: 260px;
+    padding-top: 220px;
     padding-bottom: 60px;
   }
   .areas__items {
-    height: 410px;
+    height: 310px;
   }
   .areas__decor {
     bottom: -45px;

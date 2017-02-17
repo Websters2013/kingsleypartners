@@ -27,6 +27,9 @@
                 _items.parent().on( {
                     mouseleave: function() {
 
+                        _bgBlock.css({
+                            opacity: 0
+                        });
                         setTimeout( function() {
                             _bgBlock.removeClass('visible');
                             _bgBlock.find('>div').removeClass('visible');
@@ -44,6 +47,9 @@
                         var item = $(this),
                             curItem = item.find('.areas__item');
 
+                        _bgBlock.css({
+                            opacity: 1
+                        });
 
                         if( _window.width() >= 768 ) {
 

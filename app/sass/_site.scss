@@ -39,7 +39,7 @@
 .site__footer {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 176px;
   background: #fff;
   font-size: 18px;
   line-height: 22px;
@@ -60,7 +60,7 @@
   width: 100%;
   padding: 20px 20px;
   margin: 0 auto;
-  height: 250px;
+  height: 176px;
 
   >div {
     width: 100%;
@@ -100,12 +100,12 @@
 
 @media (min-width: $tablet-portrait) {
 
-  .site__footer {
-    height: 176px;
-  }
-  .site__footer-layout {
-    height: 176px;
-  }
+  //.site__footer {
+  //  height: 176px;
+  //}
+  //.site__footer-layout {
+  //  height: 176px;
+  //}
   .site__content {
     min-height: calc(100% - 176px);
   }
@@ -127,11 +127,9 @@
     @include justify-content(space-between);
 
     >div {
+      width: 50%;
 
       &:nth-child(2) {
-        text-align: center;
-      }
-      &:nth-child(3) {
         text-align: right;
       }
 
@@ -146,37 +144,17 @@
     font-size: 24px;
     line-height: 28px;
   }
-  .site__footer-layout {
-
-    >div {
-      width: auto;
-    }
-
-  }
-
 }
 @media (min-width: $desktop-hd) {
 
   .site__header {
-    height: 240px;
+    height: 200px;
   }
   .site__header-layout {
-    height: 240px;
+    height: 200px;
   }
   .site__footer-layout {
     padding: 2px 43px 0 64px;
-
-    >div {
-      width: 38.5%;
-
-      &:nth-child(2) {
-        width: 20%;
-      }
-      &:nth-child(3) {
-        width: 40%;
-      }
-
-    }
 
   }
   .site__footer-crafted {
