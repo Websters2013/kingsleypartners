@@ -120,11 +120,11 @@
     height: 150px;
   }
   .site__footer {
-    //text-align: left;
+    height: 120px;
   }
   .site__footer-layout {
+    height: 120px;
     @include flex-direction(row);
-    //@include justify-content(space-between);
 
     >div {
       width: auto;
